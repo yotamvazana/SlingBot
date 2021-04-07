@@ -1,15 +1,16 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
+using JetBrains.Annotations;
 using UnityEngine;
 
 public class ThrowCube : MonoBehaviour
 {
     public float power = 10f;
-    public Rigidbody rb;
+
+    [CanBeNull] private GameObject Target;
 
     public Vector3 minPower;
     public Vector3 maxPower;
-    private Camera cam;
     public Camera otoCam;
 
     public LineControl lc;
@@ -20,23 +21,38 @@ public class ThrowCube : MonoBehaviour
 
     void Start()
     {
-        cam = Camera.main;
 
     }
     void Update()
     {
         if (Input.GetMouseButtonDown(0))
         {
-            startPoint = otoCam.ScreenToWorldPoint(Input.mousePosition);
-            startPoint.y = 1f;
-            Debug.Log(startPoint);
+            Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
+            if (Physics.Raycast(ray, out RaycastHit hit))
+            {
+                if (hit.collider.gameObject.tag == "Parts")
+                { 
+                    Target = hit.collider.gameObject;
+                    Debug.Log("Hit");
+                }
+            }
+
+            if (Target != null)
+            {
+                startPoint = Target.transform.position;
+                startPoint.y = 1f;
+            }
+            
         }
 
         if (Input.GetMouseButton(0))
         {
             Vector3 currentPoint = otoCam.ScreenToWorldPoint(Input.mousePosition);
             currentPoint.y = 1f;
-            lc.RenderLine(startPoint , currentPoint);
+            if (Target != null)
+            {
+                lc.RenderLine(startPoint, currentPoint);
+            }
         }
 
         if (Input.GetMouseButtonUp(0))
@@ -44,7 +60,12 @@ public class ThrowCube : MonoBehaviour
             endPoint = otoCam.ScreenToWorldPoint(Input.mousePosition);
             endPoint.y = 1f;
             force = new Vector3(Mathf.Clamp(startPoint.x - endPoint.x,minPower.x,maxPower.x),0,Mathf.Clamp(startPoint.z - endPoint.z, minPower.z,maxPower.z));
-            rb.AddForce(force * power,ForceMode.Impulse);
+            if (Target != null)
+            {
+                Target.GetComponent<Rigidbody>().AddForce(force * power, ForceMode.Impulse);
+                Target = null;
+            }
+            lc.EndLine();
         }
     }
 

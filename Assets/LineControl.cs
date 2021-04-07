@@ -21,4 +21,9 @@ public class LineControl : MonoBehaviour
         lr.SetPositions(points);
     }
 
+
+    public void EndLine()
+    {
+        lr.positionCount = 0;
+    }
 }
