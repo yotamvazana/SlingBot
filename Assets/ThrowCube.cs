@@ -48,11 +48,4 @@ public class ThrowCube : MonoBehaviour
         }
     }
 
-
-    public void GetParts()
-    {
-        RaycastHit raycast
-
-
-    }
 }
