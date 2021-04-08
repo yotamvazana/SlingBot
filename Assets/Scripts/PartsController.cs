@@ -4,5 +4,9 @@ using UnityEngine;
 
 public class PartsController : MonoBehaviour
 {
-    public float endPartEuler;
+    public float endPartEulerY;
+
+    public float endPartEulerX;
+
+    public float endPartEulerZ;
 }
