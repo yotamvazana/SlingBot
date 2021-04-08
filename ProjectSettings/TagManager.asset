@@ -6,6 +6,16 @@ TagManager:
   tags:
   - Body
   - Parts
+  - Transform 0
+  - Transform 1
+  - Transform 2
+  - Transform 3
+  - Transform 4
+  - Transform 5
+  - Transform 6
+  - Transform 7
+  - Transform 8
+  - Transform 9
   layers:
   - Default
   - TransparentFX
