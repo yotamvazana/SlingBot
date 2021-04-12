@@ -9,4 +9,16 @@ public class PartsController : MonoBehaviour
     public float endPartEulerX;
 
     public float endPartEulerZ;
+
+
+    void OnCollisionEnter(Collision collision)
+    {
+        if (collision.gameObject.tag == "Parts")
+        {
+            Debug.Log("You Lost Idiota");
+        }
+
+
+    }
+
 }
