@@ -20,6 +20,8 @@ public class ThrowCube : MonoBehaviour
 
     [CanBeNull] private GameObject _targetGO;
 
+    [SerializeField] WaitBetweenActions waitBetweenActions;
+
     // Local private variables.
 
     private Vector3 _force;
@@ -31,79 +33,73 @@ public class ThrowCube : MonoBehaviour
 
     void Update()
     {
-        if (Input.GetMouseButtonDown(0))
+        Throw();
+    }
+
+    void Throw()
+    {
+        if (waitBetweenActions.CanThrow)
         {
-            _ray = Camera.main.ScreenPointToRay(Input.mousePosition);
-
-            if (Physics.Raycast(_ray, out _hit))
+            if (Input.GetMouseButtonDown(0))
             {
-                if (_hit.collider.gameObject.tag == "Parts")
-                { 
-                    _targetGO = _hit.collider.gameObject;
+                _ray = Camera.main.ScreenPointToRay(Input.mousePosition);
 
-                    //Debug.Log("Hit");
+                if (Physics.Raycast(_ray, out _hit))
+                {
+                    if (_hit.collider.gameObject.tag == "Parts")
+                    {
+                        _targetGO = _hit.collider.gameObject;
 
+                        //Debug.Log("Hit");
+                    }
                 }
-
-            }
-
-            if (_targetGO != null)
-            {
-                _startPoint = _targetGO.transform.position;
-
-                _startPoint.y = 2f;
-
-            }
-            
-        }
-
-        if (Input.GetMouseButton(0))
-        {
-            _ray = Camera.main.ScreenPointToRay(Input.mousePosition);
-
-            if (Physics.Raycast(_ray, out _hit))
-            {
-                Vector3 currentPoint = _hit.point;
-
-                currentPoint.y = 2f;
-
                 if (_targetGO != null)
                 {
-                    lc.RenderLine(_startPoint, currentPoint);
+                    _startPoint = _targetGO.transform.position;
 
-                    //Debug.Log("Current end point? : " + currentPoint);
-
+                    _startPoint.y = 2f;
                 }
-
             }
-
-        }
-
-        if (Input.GetMouseButtonUp(0))
-        {
-            _ray = Camera.main.ScreenPointToRay(Input.mousePosition);
-
-            if (Physics.Raycast(_ray, out _hit))
+            if (Input.GetMouseButton(0))
             {
-                _endPoint = _hit.point;
+                _ray = Camera.main.ScreenPointToRay(Input.mousePosition);
 
-                _endPoint.y = 1f;
-
-                _force = new Vector3(Mathf.Clamp(_startPoint.x - _endPoint.x, minPower.x, maxPower.x), 0, Mathf.Clamp(_startPoint.z - _endPoint.z, minPower.z, maxPower.z));
-
-                if (_targetGO != null)
+                if (Physics.Raycast(_ray, out _hit))
                 {
-                    _targetGO.GetComponent<Rigidbody>().AddForce(_force * power, ForceMode.Impulse);
-                    _targetGO = null;
+                    Vector3 currentPoint = _hit.point;
 
+                    currentPoint.y = 2f;
+
+                    if (_targetGO != null)
+                    {
+                        lc.RenderLine(_startPoint, currentPoint);
+                        //Debug.Log("Current end point? : " + currentPoint);
+                    }
                 }
-
-                lc.EndLine();
-
             }
 
-        }
+            if (Input.GetMouseButtonUp(0))
+            {
+                _ray = Camera.main.ScreenPointToRay(Input.mousePosition);
 
+                if (Physics.Raycast(_ray, out _hit))
+                {
+                    _endPoint = _hit.point;
+
+                    _endPoint.y = 1f;
+
+                    _force = new Vector3(Mathf.Clamp(_startPoint.x - _endPoint.x, minPower.x, maxPower.x), 0,
+                        Mathf.Clamp(_startPoint.z - _endPoint.z, minPower.z, maxPower.z));
+
+                    if (_targetGO != null)
+                    {
+                        _targetGO.GetComponent<Rigidbody>().AddForce(_force * power, ForceMode.Impulse);
+                        _targetGO = null;
+                    }
+                    lc.EndLine();
+                }
+            }
+        }
     }
 
 }

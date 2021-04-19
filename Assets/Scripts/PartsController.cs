@@ -18,7 +18,10 @@ public class PartsController : MonoBehaviour
             Debug.Log("You Lost Idiota");
         }
 
-
+        if (collision.gameObject.tag == "Traps")
+        {
+            Debug.Log("You Lost Cuz you suck (Trap)");
+        }
     }
 
 }

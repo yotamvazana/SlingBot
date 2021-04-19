@@ -16,6 +16,7 @@ TagManager:
   - Transform 7
   - Transform 8
   - Transform 9
+  - Traps
   layers:
   - Default
   - TransparentFX
