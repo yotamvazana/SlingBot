@@ -39,7 +39,6 @@ public class WaitBetweenActions : MonoBehaviour
             else
             {
                 CanThrow = false;
-                movingRb = null;
             }
         }
         

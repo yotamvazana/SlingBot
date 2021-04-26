@@ -5,13 +5,12 @@ using UnityEngine;
 public class LineControl : MonoBehaviour
 {
     // Private variables.
-
+    
     private LineRenderer _lr;
 
     void Awake()
     {
         _lr = GetComponent<LineRenderer>();
-
     }
 
     public void RenderLine(Vector3 startPoint, Vector3 endPoint)

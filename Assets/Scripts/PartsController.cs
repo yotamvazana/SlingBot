@@ -10,17 +10,22 @@ public class PartsController : MonoBehaviour
 
     public float endPartEulerZ;
 
+    private SceneMan _Sm;
 
+    void Start()
+    {
+        _Sm = new SceneMan();
+    }
     void OnCollisionEnter(Collision collision)
     {
         if (collision.gameObject.tag == "Parts")
         {
-            Debug.Log("You Lost Idiota");
+            _Sm.SceneRestart();
         }
 
         if (collision.gameObject.tag == "Traps")
         {
-            Debug.Log("You Lost Cuz you suck (Trap)");
+            _Sm.SceneRestart();
         }
     }
 
