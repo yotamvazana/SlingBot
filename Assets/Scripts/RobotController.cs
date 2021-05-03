@@ -33,6 +33,8 @@ public class RobotController : MonoBehaviour
                     _currentPartTranform.GetComponent<Rigidbody>().velocity = Vector3.zero;
 
                     _currentPartTranform.GetComponent<Collider>().isTrigger = true;
+
+                    _currentPartTranform.GetComponent<Collider>().enabled = false;
                     
                     _currentPartTranform.localRotation = Quaternion.Euler(_currentPartTranform.GetComponent<PartsController>().endPartEulerX, _currentPartTranform.GetComponent<PartsController>().endPartEulerY, _currentPartTranform.GetComponent<PartsController>().endPartEulerZ);
 
