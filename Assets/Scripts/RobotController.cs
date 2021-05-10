@@ -5,7 +5,7 @@ using UnityEngine;
 public class RobotController : MonoBehaviour
 {
     private List<Transform> _transformChilds = new List<Transform>();
-
+    public GameObject partical;
     private void Start()
     {
         foreach (Transform child in transform)
@@ -32,6 +32,8 @@ public class RobotController : MonoBehaviour
 
                     _currentPartTranform.GetComponent<Rigidbody>().velocity = Vector3.zero;
 
+                    _currentPartTranform.GetComponent<Rigidbody>().angularVelocity = Vector3.zero;
+
                     _currentPartTranform.GetComponent<Collider>().isTrigger = true;
 
                     _currentPartTranform.GetComponent<Collider>().enabled = false;
@@ -39,6 +41,11 @@ public class RobotController : MonoBehaviour
                     _currentPartTranform.localRotation = Quaternion.Euler(_currentPartTranform.GetComponent<PartsController>().endPartEulerX, _currentPartTranform.GetComponent<PartsController>().endPartEulerY, _currentPartTranform.GetComponent<PartsController>().endPartEulerZ);
 
                     _currentPartTranform.localPosition = _transformChilds[x].position;
+
+                    Instantiate(partical, _transformChilds[x].transform.position,
+                        _transformChilds[x].transform.rotation);
+
+
 
                 }
             }
