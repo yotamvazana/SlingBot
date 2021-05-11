@@ -6,6 +6,8 @@ public class RobotController : MonoBehaviour
 {
     private List<Transform> _transformChilds = new List<Transform>();
     public GameObject partical;
+
+    Quaternion particalRotOffset = new Quaternion(-1, -1, -1, 0);
     private void Start()
     {
         foreach (Transform child in transform)
@@ -30,8 +32,7 @@ public class RobotController : MonoBehaviour
                 {
                     Debug.Log("Correct Match Part");
 
-                    Instantiate(partical, _transformChilds[x].transform.position,
-                        _transformChilds[x].transform.rotation);
+                    Instantiate(partical, _transformChilds[x].transform.position, Quaternion.identity * particalRotOffset);
 
                     _currentPartTranform.GetComponent<Rigidbody>().velocity = Vector3.zero;
 

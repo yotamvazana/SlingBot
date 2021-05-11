@@ -10,6 +10,14 @@ public class MagnetTrap : MonoBehaviour
     [SerializeField]List<Rigidbody> partList = new List<Rigidbody>();
     [SerializeField] private LayerMask part;
 
+    [SerializeField] private GameObject magnetShader;
+
+    void Start()
+    {
+        magnetShader.transform.localScale = Vector3.one * radius * 2;
+        Instantiate(magnetShader, transform.position, transform.rotation);
+
+    }
     void FixedUpdate()
     {
         if (GetMagnetPiece().Count >= 1)
