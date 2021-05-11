@@ -18,8 +18,11 @@ public class MagnetTrap : MonoBehaviour
             {
                 if (Vector3.Distance(tr.position,transform.position) > 0.8)
                 {
-                    Vector3 dir = transform.position - tr.position;
-                    tr.MovePosition(tr.position + dir.normalized * speed * Time.deltaTime);
+                    if (tr.velocity.x <= 0.2f)
+                    {
+                        Vector3 dir = transform.position - tr.position;
+                        tr.MovePosition(tr.position + dir.normalized * speed * Time.deltaTime);
+                    }
                 }
             }
         }

@@ -2231,7 +2231,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   radius: 5
-  speed: 3
   partList: []
   part:
     serializedVersion: 2
@@ -2794,7 +2793,7 @@ GameObject:
   - component: {fileID: 1631115131139814487}
   - component: {fileID: 1631115131139814489}
   - component: {fileID: 1631115131139814488}
-  m_Layer: 8
+  m_Layer: 0
   m_Name: Head
   m_TagString: Parts
   m_Icon: {fileID: 0}
@@ -2874,7 +2873,7 @@ GameObject:
   - component: {fileID: 1996243213047691790}
   - component: {fileID: 1996243213047691792}
   - component: {fileID: 1996243213047691791}
-  m_Layer: 8
+  m_Layer: 0
   m_Name: LeftArm
   m_TagString: Parts
   m_Icon: {fileID: 0}
@@ -3025,7 +3024,7 @@ GameObject:
   - component: {fileID: 5270115988877221156}
   - component: {fileID: 5270115988877221158}
   - component: {fileID: 5270115988877221157}
-  m_Layer: 8
+  m_Layer: 0
   m_Name: RightLeg
   m_TagString: Parts
   m_Icon: {fileID: 0}
@@ -3128,7 +3127,7 @@ GameObject:
   - component: {fileID: 6576079245052470087}
   - component: {fileID: 6576079245052470088}
   - component: {fileID: 6576079245052470089}
-  m_Layer: 8
+  m_Layer: 0
   m_Name: Body
   m_TagString: Body
   m_Icon: {fileID: 0}
@@ -3233,7 +3232,7 @@ GameObject:
   - component: {fileID: 8096940144680908285}
   - component: {fileID: 8096940144680908287}
   - component: {fileID: 8096940144680908286}
-  m_Layer: 8
+  m_Layer: 0
   m_Name: LeftLeg
   m_TagString: Parts
   m_Icon: {fileID: 0}
