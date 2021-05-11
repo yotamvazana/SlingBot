@@ -20,7 +20,7 @@ public class ThrowCube : MonoBehaviour
 
     [CanBeNull] private GameObject _targetGO;
 
-    [SerializeField] WaitBetweenActions waitBetweenActions;
+    [SerializeField] private WaitBetweenActions waitBetweenActions;
 
     // Local private variables.
 
@@ -68,7 +68,7 @@ public class ThrowCube : MonoBehaviour
                 {
                     Vector3 currentPoint = _hit.point;
 
-                    currentPoint.y = 2f;
+                    //currentPoint.y = 0.2f;  // this is the y value of the line // if we want it to be with a little offset and not go threw gm`s
 
                     if (_targetGO != null)
                     {

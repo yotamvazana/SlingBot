@@ -30,6 +30,9 @@ public class RobotController : MonoBehaviour
                 {
                     Debug.Log("Correct Match Part");
 
+                    Instantiate(partical, _transformChilds[x].transform.position,
+                        _transformChilds[x].transform.rotation);
+
                     _currentPartTranform.GetComponent<Rigidbody>().velocity = Vector3.zero;
 
                     _currentPartTranform.GetComponent<Rigidbody>().angularVelocity = Vector3.zero;
@@ -41,11 +44,6 @@ public class RobotController : MonoBehaviour
                     _currentPartTranform.localRotation = Quaternion.Euler(_currentPartTranform.GetComponent<PartsController>().endPartEulerX, _currentPartTranform.GetComponent<PartsController>().endPartEulerY, _currentPartTranform.GetComponent<PartsController>().endPartEulerZ);
 
                     _currentPartTranform.localPosition = _transformChilds[x].position;
-
-                    Instantiate(partical, _transformChilds[x].transform.position,
-                        _transformChilds[x].transform.rotation);
-
-
 
                 }
             }
