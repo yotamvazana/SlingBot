@@ -29,7 +29,7 @@ public class SawObstacleController : MonoBehaviour
     {
         float timeSinceStartedMoving = 0.0f;
 
-        sawControllerCS.sawSpeed = 20;
+        sawControllerCS.sawSpeed = sawControllerCS.sawSpeed * 1;
 
         while (true)
         {
@@ -55,7 +55,7 @@ public class SawObstacleController : MonoBehaviour
     {
         float timeSinceStartedMoving = 0.0f;
 
-        sawControllerCS.sawSpeed = -20;
+        sawControllerCS.sawSpeed = sawControllerCS.sawSpeed * 1;
 
         while (true)
         {
