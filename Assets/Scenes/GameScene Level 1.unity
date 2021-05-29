@@ -3073,6 +3073,11 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 2016434472}
     m_Modifications:
+    - target: {fileID: 5532178562851249245, guid: fe036c67c97789e439c861cd671acd07,
+        type: 3}
+      propertyPath: m_Spring.spring
+      value: 10
+      objectReference: {fileID: 0}
     - target: {fileID: 5532178563500173357, guid: fe036c67c97789e439c861cd671acd07,
         type: 3}
       propertyPath: m_RootOrder
@@ -3132,6 +3137,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: SpringDoubleDoors
+      objectReference: {fileID: 0}
+    - target: {fileID: 5532178564034120662, guid: fe036c67c97789e439c861cd671acd07,
+        type: 3}
+      propertyPath: m_Spring.spring
+      value: 10
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: fe036c67c97789e439c861cd671acd07, type: 3}
