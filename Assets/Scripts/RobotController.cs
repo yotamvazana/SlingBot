@@ -6,6 +6,8 @@ public class RobotController : MonoBehaviour
 {
     private List<Transform> _transformChilds = new List<Transform>();
     public GameObject partical;
+    private int robotsTrigger = 0;
+    public bool isRobotFull;
 
     Quaternion particalRotOffset = new Quaternion(-1, -1, -1, 0);
     private void Start()
@@ -16,6 +18,11 @@ public class RobotController : MonoBehaviour
 
         }
 
+    }
+
+    void Update()
+    {
+        RobotIsFull();
     }
 
     private void OnTriggerEnter(Collider other)
@@ -45,11 +52,20 @@ public class RobotController : MonoBehaviour
                     _currentPartTranform.localRotation = Quaternion.Euler(_currentPartTranform.GetComponent<PartsController>().endPartEulerX, _currentPartTranform.GetComponent<PartsController>().endPartEulerY, _currentPartTranform.GetComponent<PartsController>().endPartEulerZ);
 
                     _currentPartTranform.localPosition = _transformChilds[x].position;
+                    robotsTrigger++;
 
                 }
             }
 
         }
 
+    }
+
+    private void RobotIsFull()
+    {
+        if (robotsTrigger >= _transformChilds.Count)
+        {
+            isRobotFull = true;
+        }
     }
 }
