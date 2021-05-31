@@ -18,6 +18,7 @@ TagManager:
   - Transform 9
   - Traps
   - Pickable
+  - Saw
   layers:
   - Default
   - TransparentFX

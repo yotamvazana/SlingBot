@@ -5,8 +5,11 @@ using UnityEngine;
 public class RobotController : MonoBehaviour
 {
     private List<Transform> _transformChilds = new List<Transform>();
+
     public GameObject partical;
+
     private int robotsTrigger = 0;
+
     public bool isRobotFull;
 
     Quaternion particalRotOffset = new Quaternion(-1, -1, -1, 0);
@@ -23,6 +26,7 @@ public class RobotController : MonoBehaviour
     void Update()
     {
         RobotIsFull();
+
     }
 
     private void OnTriggerEnter(Collider other)
