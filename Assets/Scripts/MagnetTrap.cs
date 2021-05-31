@@ -24,11 +24,10 @@ public class MagnetTrap : MonoBehaviour
         {
             foreach (Rigidbody tr in partList)
             {
-                if (Vector3.Distance(tr.position,transform.position) > 0.8)
-                {
+                
                     Vector3 dir = transform.position - tr.position;
                     tr.MovePosition(tr.position + dir.normalized * speed * Time.deltaTime);
-                }
+                
             }
         }
         

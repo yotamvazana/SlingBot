@@ -13,6 +13,8 @@ public class SawObstacleController : MonoBehaviour
 
     [SerializeField] private SawController sawControllerCS;
 
+    [SerializeField] private GameObject sparkPrefab;
+
     private bool startToEnd = true;
     [SerializeField] private float sawSpeed;
 
@@ -20,6 +22,7 @@ public class SawObstacleController : MonoBehaviour
     void Start()
     {
         sawBladeTransform.localPosition = startPointTransform.localPosition;
+        sparkPrefab.transform.localRotation = Quaternion.Inverse(sparkPrefab.transform.localRotation);
 
         StartCoroutine(InitSawObstacleMovementStartToEnd());
 
@@ -29,7 +32,8 @@ public class SawObstacleController : MonoBehaviour
     {
         float timeSinceStartedMoving = 0.0f;
 
-        sawControllerCS.sawSpeed = sawControllerCS.sawSpeed * 1;
+        sparkPrefab.transform.localRotation = Quaternion.Inverse(sparkPrefab.transform.localRotation);
+        sawControllerCS.sawSpeed = sawControllerCS.sawSpeed * -1;
 
         while (true)
         {
@@ -55,7 +59,8 @@ public class SawObstacleController : MonoBehaviour
     {
         float timeSinceStartedMoving = 0.0f;
 
-        sawControllerCS.sawSpeed = sawControllerCS.sawSpeed * 1;
+        sparkPrefab.transform.localRotation = Quaternion.Inverse(sparkPrefab.transform.localRotation);
+        sawControllerCS.sawSpeed = sawControllerCS.sawSpeed * -1;
 
         while (true)
         {

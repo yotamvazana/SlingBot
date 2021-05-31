@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using JetBrains.Annotations;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class ThrowCube : MonoBehaviour
 {
@@ -9,12 +10,19 @@ public class ThrowCube : MonoBehaviour
 
     [SerializeField] private Camera otoCam;
     [SerializeField] private LineControl lc;
+    [SerializeField] private Text TurnsText;
+
+    [SerializeField] private RobotController robotController;
+    private SceneMan sceneMan;
 
     [Header("Drag Settings")]
 
     [SerializeField] private float power = 10f;
     [SerializeField] private Vector3 minPower;
     [SerializeField] private Vector3 maxPower;
+
+    [SerializeField] int NumberOfTurns;
+
 
     // Target game object.
 
@@ -30,6 +38,12 @@ public class ThrowCube : MonoBehaviour
 
     private Ray _ray;
     private RaycastHit _hit;
+
+    void Start()
+    {
+        TurnsText.text = NumberOfTurns.ToString();
+        sceneMan = new SceneMan();
+    }
 
     void Update()
     {
@@ -94,11 +108,28 @@ public class ThrowCube : MonoBehaviour
                     if (_targetGO != null)
                     {
                         _targetGO.GetComponent<Rigidbody>().AddForce(_force * power, ForceMode.Impulse);
+                        NumberOfTurns--; // this is where the turns goes down 1 turn
+                        StartCoroutine(TurnsCheck());
+                        TurnsText.text = NumberOfTurns.ToString();
+                        Debug.Log(NumberOfTurns);
                         _targetGO = null;
                     }
                     lc.EndLine();
                 }
             }
+        }
+    }
+
+    IEnumerator TurnsCheck()
+    {
+        yield return new WaitForSeconds(3f);
+        if (robotController.isRobotFull)
+        {
+            Debug.Log("You Won!");
+        }
+        else if(NumberOfTurns <= 0)
+        {
+            sceneMan.SceneRestart(); // window of "You lost"
         }
     }
 

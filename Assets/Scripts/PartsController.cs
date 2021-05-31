@@ -20,13 +20,18 @@ public class PartsController : MonoBehaviour
     {
         if (collision.gameObject.tag == "Parts")
         {
-            _Sm.SceneRestart();
+            StartCoroutine(LoseCond());
         }
 
         if (collision.gameObject.tag == "Traps")
         {
-            _Sm.SceneRestart();
+            StartCoroutine(LoseCond());
         }
     }
 
+    IEnumerator LoseCond()
+    {
+        yield return new WaitForSeconds(1f);
+        _Sm.SceneRestart();
+    }
 }

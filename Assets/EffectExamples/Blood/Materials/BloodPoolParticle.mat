@@ -10,7 +10,7 @@ Material:
   m_Name: BloodPoolParticle
   m_Shader: {fileID: 4800000, guid: 933532a4fcc9baf4fa0491de14d08ed7, type: 3}
   m_ShaderKeywords: _EMISSION _NORMALMAP _SPECULAR_SETUP
-  m_LightmapFlags: 1
+  m_LightmapFlags: 2
   m_EnableInstancingVariants: 0
   m_DoubleSidedGI: 0
   m_CustomRenderQueue: 3050
@@ -93,9 +93,9 @@ Material:
     - _WorkflowMode: 0
     - _ZWrite: 0
     m_Colors:
-    - _BaseColor: {r: 0.375, g: 0, b: 0, a: 1}
+    - _BaseColor: {r: 0.0754717, g: 0.06229975, b: 0.06229975, a: 1}
     - _Color: {r: 0.375, g: 0, b: 0, a: 1}
-    - _EmissionColor: {r: 0.19117647, g: 0, b: 0, a: 1}
+    - _EmissionColor: {r: 0.009433985, g: 0.0035154943, b: 0.0035154943, a: 1}
     - _SpecColor: {r: 0.066176474, g: 0.066176474, b: 0.066176474, a: 1}
     - _TintColor: {r: 0.3602941, g: 0, b: 0, a: 0.5}
 --- !u!114 &1602381105545625443
