@@ -37,6 +37,12 @@ public class SawObstacleController : MonoBehaviour
 
         while (true)
         {
+            if (Time.timeScale == 0)
+            {
+                yield return new WaitForSeconds(0.1f);
+
+            }
+
             timeSinceStartedMoving += Time.deltaTime;
 
             sawBladeTransform.localPosition = Vector3.MoveTowards(sawBladeTransform.localPosition, endPointTransform.localPosition, timeSinceStartedMoving * sawSpeed);
@@ -64,6 +70,12 @@ public class SawObstacleController : MonoBehaviour
 
         while (true)
         {
+            if (Time.timeScale == 0)
+            {
+                yield return new WaitForSeconds(0.1f);
+
+            }
+
             timeSinceStartedMoving += Time.deltaTime;
 
             sawBladeTransform.localPosition = Vector3.MoveTowards(sawBladeTransform.localPosition, startPointTransform.localPosition, timeSinceStartedMoving * sawSpeed);

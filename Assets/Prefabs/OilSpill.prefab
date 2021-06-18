@@ -71,6 +71,10 @@ PrefabInstance:
       value: BloodStreamEffect
       objectReference: {fileID: 0}
     - target: {fileID: 4000012961768668, guid: a3768c8a9d1b90d4bb0eb0e4bdbe730c, type: 3}
+      propertyPath: m_RootOrder
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4000012961768668, guid: a3768c8a9d1b90d4bb0eb0e4bdbe730c, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0
       objectReference: {fileID: 0}
@@ -83,6 +87,10 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4000012961768668, guid: a3768c8a9d1b90d4bb0eb0e4bdbe730c, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4000012961768668, guid: a3768c8a9d1b90d4bb0eb0e4bdbe730c, type: 3}
       propertyPath: m_LocalRotation.x
       value: -0
       objectReference: {fileID: 0}
@@ -93,14 +101,6 @@ PrefabInstance:
     - target: {fileID: 4000012961768668, guid: a3768c8a9d1b90d4bb0eb0e4bdbe730c, type: 3}
       propertyPath: m_LocalRotation.z
       value: -0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4000012961768668, guid: a3768c8a9d1b90d4bb0eb0e4bdbe730c, type: 3}
-      propertyPath: m_LocalRotation.w
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 4000012961768668, guid: a3768c8a9d1b90d4bb0eb0e4bdbe730c, type: 3}
-      propertyPath: m_RootOrder
-      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4000012961768668, guid: a3768c8a9d1b90d4bb0eb0e4bdbe730c, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
@@ -121,13 +121,13 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 198000011579028428, guid: a3768c8a9d1b90d4bb0eb0e4bdbe730c,
         type: 3}
-      propertyPath: SizeModule.curve.maxCurve.m_Curve.Array.data[2].value
-      value: 0.05405426
+      propertyPath: SizeModule.separateAxes
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 198000011579028428, guid: a3768c8a9d1b90d4bb0eb0e4bdbe730c,
         type: 3}
-      propertyPath: SizeModule.separateAxes
-      value: 0
+      propertyPath: SizeModule.curve.maxCurve.m_Curve.Array.data[2].value
+      value: 0.05405426
       objectReference: {fileID: 0}
     - target: {fileID: 198000014159833656, guid: a3768c8a9d1b90d4bb0eb0e4bdbe730c,
         type: 3}
