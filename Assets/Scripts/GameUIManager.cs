@@ -10,6 +10,10 @@ public class GameUIManager : MonoBehaviour
 
     [SerializeField] GameObject resetPanel;
 
+    [SerializeField] GameObject winPanel;
+
+    [SerializeField] GameObject losePanel;
+
     public void OnClickPauseButton()
     {
         Time.timeScale = 0;
@@ -17,6 +21,10 @@ public class GameUIManager : MonoBehaviour
         resetPanel.SetActive(true);
 
         pauseMenuGamePanel.SetActive(true);
+
+        winPanel.SetActive(false);
+
+        losePanel.SetActive(false);
 
     }
 
@@ -26,8 +34,40 @@ public class GameUIManager : MonoBehaviour
 
         pauseMenuGamePanel.SetActive(false);
 
+        winPanel.SetActive(false);
+
+        losePanel.SetActive(false);
+
         Time.timeScale = 1;
         
+    }
+
+    public void OnGameWin()
+    {
+        Time.timeScale = 0;
+
+        resetPanel.SetActive(true);
+
+        pauseMenuGamePanel.SetActive(false);
+
+        winPanel.SetActive(true);
+
+        losePanel.SetActive(false);
+
+    }
+
+    public void OnGameLost()
+    {
+        Time.timeScale = 0;
+
+        resetPanel.SetActive(true);
+
+        pauseMenuGamePanel.SetActive(false);
+
+        winPanel.SetActive(false);
+
+        losePanel.SetActive(true);
+
     }
 
     public void OnClickMainMenuButton()
@@ -43,6 +83,12 @@ public class GameUIManager : MonoBehaviour
         Time.timeScale = 1;
 
         SceneManager.LoadScene(SceneManager.GetActiveScene().name);
+
+    }
+
+    public void OnClickNextLevel()
+    {
+        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
 
     }
 

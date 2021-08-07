@@ -76,3 +76,5 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   pauseMenuGamePanel: {fileID: 0}
   resetPanel: {fileID: 0}
+  winPanel: {fileID: 0}
+  losePanel: {fileID: 0}

@@ -15,9 +15,13 @@ public class PartsController : MonoBehaviour
 
     public float forceMultiplier;
 
+    private GameUIManager gameUIManager;
+
     void Start()
     {
         _Sm = new SceneMan();
+
+        gameUIManager = FindObjectOfType<GameUIManager>();
 
     }
 
@@ -49,9 +53,11 @@ public class PartsController : MonoBehaviour
 
     IEnumerator LoseCond()
     {
-        yield return new WaitForSeconds(1f);
+        yield return new WaitForSeconds(0.2f);
 
-        _Sm.SceneRestart();
+        gameUIManager.OnGameLost();
+
+        //_Sm.SceneRestart();
 
     }
 

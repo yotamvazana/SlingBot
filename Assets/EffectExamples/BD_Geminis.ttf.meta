@@ -1,0 +1,24 @@
+fileFormatVersion: 2
+guid: afe8133c09eb35a4eb513f0e3383d57f
+TrueTypeFontImporter:
+  externalObjects: {}
+  serializedVersion: 4
+  fontSize: 16
+  forceTextureCase: -2
+  characterSpacing: 0
+  characterPadding: 1
+  includeFontData: 1
+  fontName: BD Geminis
+  fontNames:
+  - BD Geminis
+  fallbackFontReferences:
+  - {fileID: 12800000, guid: 37e2ec4014affca4c9b7927041190b39, type: 3}
+  - {fileID: 12800000, guid: 86d59528ce3da2b408bbdd40abad7fc7, type: 3}
+  customCharacters: 
+  fontRenderingMode: 0
+  ascentCalculationMode: 1
+  useLegacyBoundsCalculation: 0
+  shouldRoundAdvanceValue: 1
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

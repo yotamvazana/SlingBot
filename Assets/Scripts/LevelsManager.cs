@@ -41,4 +41,28 @@ public class LevelsManager : MonoBehaviour
 
     }
 
+    public void PlayLevel7Scene()
+    {
+        SceneManager.LoadScene(7);
+
+    }
+
+    public void PlayLevel8Scene()
+    {
+        SceneManager.LoadScene(8);
+
+    }
+
+    public void PlayLevel9Scene()
+    {
+        SceneManager.LoadScene(9);
+
+    }
+
+    public void PlayLevel10Scene()
+    {
+        SceneManager.LoadScene(10);
+
+    }
+
 }
