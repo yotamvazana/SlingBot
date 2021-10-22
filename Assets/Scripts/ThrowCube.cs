@@ -176,6 +176,8 @@ public class ThrowCube : MonoBehaviour
                             currentPart[0].GetComponent<Rigidbody>().AddForce(_force * power, ForceMode.Impulse);
                             // highlight.Stop();
                             currentPart[0].transform.GetComponent<Outline>().OutlineWidth = 1f;
+                            currentPart[0].transform.GetComponent<Outline>().OutlineColor = Color.white;
+
                             NumberOfTurns--; // this is where the turns goes down 1 turn
                             currentPart.Clear();
                             StartCoroutine(TurnsCheck());
@@ -187,6 +189,8 @@ public class ThrowCube : MonoBehaviour
                             if (currentPart.Count > 0)
                             {
                                 currentPart[0].transform.GetComponent<Outline>().OutlineWidth = 1f;
+                                currentPart[0].transform.GetComponent<Outline>().OutlineColor = Color.white;
+
 
                             }
                             currentPart.Clear();
@@ -194,6 +198,7 @@ public class ThrowCube : MonoBehaviour
                             // highlight.transform.position = currentPart[0].transform.position;
                             // highlight.Play();
                             currentPart[0].transform.GetComponent<Outline>().OutlineWidth = 4f;
+                            currentPart[0].transform.GetComponent<Outline>().OutlineColor = Color.red;
                             // add a selected effect
                         }
 
